@@ -14,12 +14,13 @@ function validateForm(){
 		alert("llenar el campo apellido por favor");
 	}
 
+	var correovalidado=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 	var email = document.getElementById("input-email").value;
-	if (email == ""){
+	if (email == "" ){
 		alert("llenar el campo correo por favor");
-	} else if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
-		alert("correo invalido");
-	}
+	} else if(!correovalidado.test(email)) {
+        alert("Ingrese un correo válido.");
+    }
 
 	var password = document.getElementById("input-password").value;
 	if (password == "") {
@@ -34,6 +35,9 @@ function validateForm(){
 	if (menu == 0) {
 		alert("selecciona un tipo de bici por favor");
 	}  
+
+   
+    
 }
 		
 
